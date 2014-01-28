@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = DogeCoin::VERSION
   spec.authors       = ["Dimitri Jorge"]
   spec.email         = ["jorge.dimitri@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A simple wrapper for dogechain.info api calls}
+  spec.description   = %q{This is a wrapper for the dogechain.info api calls. Make verifications on transactions, check amounts received and sent, execute block on a given verification count etc..}
+  spec.homepage      = "https://github.com/jorge-d/dogecoin"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
