@@ -19,6 +19,11 @@ module DogeCoin
       call_blockchain_api('totalbc').to_f
     end
 
+    # Returns the amount transactions of the last blocks as an Array object
+    def transactions
+      JSON.parse(call_blockchain_api("transactions"))
+    end
+
     # Returns the address balance (received - sent)
     # Raise error if address is invalid
     def address_balance address

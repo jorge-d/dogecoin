@@ -25,6 +25,9 @@ describe DogeCoin do
     difficulty.should be_within(0.1).of(38898180040.5)
     difficulty.should be_a(Float)
   end
+  it '#get_total_mined' do
+    DogeCoin.transactions.should be_a(Array)
+  end
 
   it '#address_balance' do
     DogeCoin.address_balance('DFrwT5zteXdvfgz3vjhWNcpXMXDiVPmkXN').should be_within(0.1).of(18712.3)
