@@ -25,10 +25,20 @@ module DogeCoin
       balance.to_f
     end
 
-    # Returns the address balance (received - sent)
+    # Returns the total sent
     # Raise error if address is invalid
     def total_received address
       balance = call_blockchain_api("getreceivedbyaddress/#{address}")
+
+      raise DogeCoin::InvalidAddress unless is_a_float?(balance)
+
+      balance.to_f
+    end
+
+    # Returns the total sent
+    # Raise error if address is invalid
+    def total_sent address
+      balance = call_blockchain_api("getsentbyaddress/#{address}")
 
       raise DogeCoin::InvalidAddress unless is_a_float?(balance)
 

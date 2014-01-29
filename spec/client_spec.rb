@@ -35,6 +35,14 @@ describe DogeCoin do
       expect { DogeCoin.total_received(invalid_address) }.to raise_error(DogeCoin::InvalidAddress)
     end
   end
+  it '#total_sent' do
+    DogeCoin.total_sent('DABmu1j1hD2HeFEiMGUByuc1HwwZguQvWg').should be_within(0.1).of(86136.8)
+    DogeCoin.total_sent(ADDRESS_FOR_DONATIONS).should be_within(0.1).of(0)
+
+    ['', 'abcdef', "#{ADDRESS_FOR_DONATIONS}+---"].each do |invalid_address|
+      expect { DogeCoin.total_sent(invalid_address) }.to raise_error(DogeCoin::InvalidAddress)
+    end
+  end
 
   it '#address_to_hash & #hash_to_address' do
     hash = DogeCoin.address_to_hash(ADDRESS_FOR_DONATIONS)
