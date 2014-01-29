@@ -18,6 +18,13 @@ describe DogeCoin do
     difficulty.should == 1009.723
     difficulty.should be_a(Float)
   end
+  it '#get_total_mined' do
+    difficulty = DogeCoin.get_total_mined
+
+    # As recorded in the tape
+    difficulty.should be_within(0.1).of(38898180040.5)
+    difficulty.should be_a(Float)
+  end
 
   it '#address_balance' do
     DogeCoin.address_balance('DFrwT5zteXdvfgz3vjhWNcpXMXDiVPmkXN').should be_within(0.1).of(18712.3)

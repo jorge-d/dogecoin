@@ -14,6 +14,10 @@ module DogeCoin
     def get_difficulty
       call_blockchain_api('getdifficulty').to_f
     end
+    # Returns the total of mined doges
+    def get_total_mined
+      call_blockchain_api('totalbc').to_f
+    end
 
     # Returns the address balance (received - sent)
     # Raise error if address is invalid
