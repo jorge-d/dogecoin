@@ -1,6 +1,6 @@
 # DogeCoin
 
-[![Gem Version](https://badge.fury.io/rb/doge_coin.png)](http://badge.fury.io/rb/doge_coin)
+[![Gem Version](https://badge.fury.io/rb/doge_coin.png)](http://badge.fury.io/rb/doge_coin) [![Dependency Status](https://gemnasium.com/jorge-d/dogecoin.png)](https://gemnasium.com/jorge-d/dogecoin)
 
 The purpose of this gem is to explore the DogeCoin blockchain.
 For the moment it wraps the [Dogechain](http://dogechain.info) API, but this could change in the future.
