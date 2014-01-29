@@ -2,9 +2,9 @@ PATH
   remote: .
   specs:
     doge_coin (0.0.1)
-      faraday (~> 0.9.0)
-      multi_json
-      vcr
+      faraday (~> 0.9)
+      multi_json (~> 1.8)
+      vcr (~> 2.8)
 
 GEM
   remote: https://rubygems.org/
@@ -19,7 +19,7 @@ GEM
     method_source (0.8.2)
     multi_json (1.8.4)
     multipart-post (2.0.0)
-    pry (0.9.12.4)
+    pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -35,7 +35,7 @@ GEM
     safe_yaml (0.9.7)
     slop (3.4.7)
     vcr (2.8.0)
-    webmock (1.16.1)
+    webmock (1.15.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
 
@@ -46,6 +46,6 @@ DEPENDENCIES
   bundler (~> 1.5)
   doge_coin!
   pry
-  rake
+  rake (~> 10.1)
   rspec (~> 2.14)
-  webmock
+  webmock (= 1.15)
