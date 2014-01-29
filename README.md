@@ -1,6 +1,7 @@
 # DogeCoin
 
-TODO: Write a gem description
+The purpose of this gem is to explore the DogeCoin blockchain.
+For the moment it wraps the [Dogechain](http://dogechain.info) API, but this could change in the future.
 
 ## Installation
 
@@ -18,7 +19,46 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Instruction
+
+There is a call mapped for nearly all the [dogechain API](http://dogechain.info/chain/Dogecoin/q).
+
+The current calls are:
+```ruby
+get_block_count
+get_difficulty
+get_total_mined
+transactions
+address_balance (address)
+total_received (address)
+total_sent (address)
+address_to_hash (address)
+hash_to_address (address)
+valid_address? (address)
+decode_address (address)
+```
+
+In a close-future, I would like to add methods to check if an address received new transactions, check how much validations it got etc...
+
+Feel free to contribute !
+
+### Configuration
+
+You can configure the gem to use [VCR](https://github.com/vcr/vcr) (e.g: for test purpose).
+Simply add the following to your spec_helper.rb
+
+```ruby
+DogeCoin.configure do |c|
+  c.vcr_mode = true
+end
+```
+
+## Testing
+
+Checkout the gem, then simply run
+```shell
+rspec
+```
 
 ## Contributing
 

@@ -73,7 +73,7 @@ module DogeCoin
     end
 
     # Shows ADDRESS's version byte(s) and public key hash as hex strings separated by colon (":").
-    def decode_address address, skip_validation = false
+    def decode_address address
       call_blockchain_api("decode_address/#{address}")
     end
 
