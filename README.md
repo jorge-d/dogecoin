@@ -25,19 +25,20 @@ Or install it yourself as:
 
 There is a call mapped for nearly all the [dogechain API](http://dogechain.info/chain/Dogecoin/q).
 
-The current calls are:
+The calls are mapped as follow:
 ```ruby
-get_block_count
-get_difficulty
-get_total_mined
-transactions
-address_balance (address)
-total_received (address)
-total_sent (address)
-address_to_hash (address)
-hash_to_address (address)
-valid_address? (address)
-decode_address (address)
+[nethash (interval, start, end)](http://dogechain.info/chain/DogeCoin/q/nethash)
+[get_block_count](http://dogechain.info/chain/DogeCoin/q/getblockcount)
+[get_difficulty](http://dogechain.info/chain/DogeCoin/q/getdifficulty)
+[get_total_mined](http://dogechain.info/chain/DogeCoin/q/totalbc)
+[transactions](http://dogechain.info/chain/DogeCoin/q/transactions)
+[address_balance (address)](http://dogechain.info/chain/DogeCoin/q/addressbalance)
+[total_received (address)](http://dogechain.info/chain/DogeCoin/q/getreceivedbyaddress)
+[total_sent (address)](http://dogechain.info/chain/DogeCoin/q/getsentbyaddress)
+[address_to_hash (address)](http://dogechain.info/chain/DogeCoin/q/addresstohash)
+[hash_to_address (address)](http://dogechain.info/chain/DogeCoin/q/hashtoaddress)
+[valid_address? (address)](http://dogechain.info/chain/DogeCoin/q/checkaddress)
+[decode_address (address)](http://dogechain.info/chain/DogeCoin/q/decode_address)
 ```
 
 In a close-future, I would like to add methods to check if an address received new transactions, check how much validations it got etc...
