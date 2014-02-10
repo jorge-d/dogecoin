@@ -71,4 +71,10 @@ describe DogeCoin do
   it '#decode_address' do
     DogeCoin.decode_address(ADDRESS_FOR_DONATIONS).should == "1e:#{HASH_FROM_ADDRESS_FOR_DONATION}"
   end
+
+  it '#nethash' do
+    DogeCoin.nethash.should == DogeCoin.nethash(500, 0, nil)
+    DogeCoin.nethash(133, 0, 1000).count.should == 7
+    DogeCoin.nethash(150, 100, 200).count.should == 0
+  end
 end

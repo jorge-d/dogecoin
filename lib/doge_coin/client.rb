@@ -21,7 +21,7 @@ module DogeCoin
 
     # Returns the amount transactions of the last blocks as an Array object
     def transactions
-      JSON.parse(call_blockchain_api("transactions"))
+      ::JSON.parse(call_blockchain_api("transactions"))
     end
 
     # Returns the address balance (received - sent)
@@ -32,6 +32,17 @@ module DogeCoin
       raise DogeCoin::InvalidAddress unless is_a_float?(balance)
 
       balance.to_f
+    end
+
+    # shows statistics about difficulty and network power
+    #
+    # /nethash/INTERVAL/START/STOP
+    # Default INTERVAL=500, START=0, STOP=infinity.
+    #
+    # See http://dogechain.info/chain/Dogecoin/q/nethash
+    def nethash interval = 500, start = 0, stop = false
+      suffixe = stop ? "/#{stop}" : ''
+      ::JSON.parse(call_blockchain_api("nethash/#{interval}/#{start}#{suffixe}?format=json"))
     end
 
     # Returns the total sent
