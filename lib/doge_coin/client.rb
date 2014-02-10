@@ -1,4 +1,5 @@
 require 'doge_coin/errors'
+require 'json'
 require 'faraday'
 
 module DogeCoin
@@ -21,7 +22,7 @@ module DogeCoin
 
     # Returns the amount transactions of the last blocks as an Array object
     def transactions
-      ::JSON.parse(call_blockchain_api("transactions"))
+      JSON.parse(call_blockchain_api("transactions"))
     end
 
     # Returns the address balance (received - sent)
@@ -42,7 +43,7 @@ module DogeCoin
     # See http://dogechain.info/chain/Dogecoin/q/nethash
     def nethash interval = 500, start = 0, stop = false
       suffixe = stop ? "/#{stop}" : ''
-      ::JSON.parse(call_blockchain_api("nethash/#{interval}/#{start}#{suffixe}?format=json"))
+      JSON.parse(call_blockchain_api("nethash/#{interval}/#{start}#{suffixe}?format=json"))
     end
 
     # Returns the total sent
